@@ -31,24 +31,49 @@ app.get("*", function (req, res) {
 
 //Post request
 app.post("/api/notes", function(req, res) {
-    fs.readFile("./db/db.json", "utf8", function(err, data){ 
+    fs.readFile("./db/db.json", "utf8", (err, data) =>{ 
         if (err) throw err;
         let savedNotes = JSON.parse(data);
         console.log(savedNotes);
  
     let newNotes = req.body;
-    newNotes.id = notes.length + 1;
+    newNotes.id = savedNotes.length + 1;
     savedNotes.push(newNotes);
     console.log(savedNotes);
 
     //Add notes to db.json file 
     fs.writeFile("./db/db.json", JSON.stringify(savedNotes), (err) =>{
-      if (err) return console.log(err);
+        if (err) return console.log(err);
      })
      console.log("Note saved to db.json. Content: ", newNotes);
      res.json(savedNotes)
     }); 
 });
+
+app.delete("/api/notes/:id", function(req, res) {
+    fs.readFile("./db/db.json", "utf8", (err, data) =>{ 
+        if (err) throw err;
+
+    let savedNotes = JSON.parse(data);
+
+    let noteID = req.params.id;
+    let newID = 0;
+    console.log(`Deleting note with ID ${noteID}`);
+    savedNotes = savedNotes.filter(currNote => {
+        return currNote.id != noteID;
+    })
+    
+    for (currNote of savedNotes) {
+        currNote.id = newID.toString();
+        newID++;
+    }
+    
+    fs.writeFile("./db/db.json", JSON.stringify(savedNotes), (err)=>{
+        if (err) return console.log(err)
+    })
+    res.json(savedNotes); 
+    });
+})
 
 //Listener
 app.listen(PORT, function() {
