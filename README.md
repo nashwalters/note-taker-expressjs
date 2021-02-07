@@ -52,6 +52,9 @@ const fs = require('fs')
 The user is taken to a home page where they are able to click on the get started button. This button takes the user to another page that where thet are ablle to create/ add a note. Once the note is saved, the title of the saved note is visible ant the user can click on the saved note to see the contents of the note or click on the trash can to delete the note. The user is able to add as many notes ant they would like. 
 
 #### Screenshots
+<img src="assets/note-taker.gif" alt="gif of app" width="600px">
+<img src="assets/screencapture-1.png" alt="main page of app" width="600px">
+<img src="assets/screencapture-2.png" alt="notes page of app" width="600px">
 
 
 #### Tips
