@@ -46,8 +46,8 @@ const fs = require('fs')
 ## Deployment 
 [Heroku](https://www.heroku.com/what) allows developers to deploy and manage their apps.
 
-<a href="https://secret-island-62587.herokuapp.com/" target="_blank"> Cllick hee to deploy app.</a>
-
+[Click here to deploy app](https://secret-island-62587.herokuapp.com/)
+ 
 ## Usage
 The user is taken to a home page where they are able to click on the get started button. This button takes the user to another page that where thet are ablle to create/ add a note. Once the note is saved, the title of the saved note is visible ant the user can click on the saved note to see the contents of the note or click on the trash can to delete the note. The user is able to add as many notes ant they would like. 
 
