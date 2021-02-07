@@ -12,10 +12,10 @@
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
-  * [Nodejs](#nodejs)
-  * [Dependencies](#dependencies)
+  * [Expressjs](#expressjs)
+  * [FS Module](#fs-module)
+* [Deployment](#deployment)
 * [Usage](#usage)
-  * [Demo](#demo)
   * [Screenshots](#screenshots)
   * [Tips](#tips)
 * [Contributing](#contributing)
@@ -24,21 +24,32 @@
 * [License](#license)
 
 ## Description
-This is a simple note taker using express.js.
+Have you ever tried to recall something important, but you just can't remember the information you need? Keeping notes is an option that will allow you to have written information when needed. It is believed that note-taking boosts memory and the ability to retain and understand concepts. However, why just use pen and paper when you can use a simple note taking app made with express.js and deploped with Heroku.
 
+This note taker allows the user to create and save notes, view previuosly saved notes and delete previously saved notes and is useful as it allows the user to organize their thoughts and keep track of information/ tasks that are important.
 
 ## Installation
+Node.js is required ([See download information here](https://nodejs.org/en/download/)). The app uses express.js and the node fs module.
 
-### Nodejs 
+### Expressjs
+[Express](https://expressjs.com/) is a minimal and flexible Node.js web application framework. It's features include: robust routing, super-high test coverage and HTTP helpers (redirection, caching, etc). Run the comman below in terminal to install express.
+```
+$ npm i express
+```
+### FS Module
+The [FS Module](https://nodejs.org/api/fs.html)comes with node.js. It allows you to work with the file system on your computer. It is used to read, create, update, delete and rename files
+To include the File System module, use the require() method:
+```
+const fs = require('fs')
+```
 
+## Deployment 
+[Heroku](https://www.heroku.com/what) allows developers to deploy and manage their apps.
 
-### Dependencies 
+[Click here to see deployed app](https://secret-island-62587.herokuapp.com/).
 
 ## Usage
-
-
-#### Demo
-
+The user is taken to a home page where they are able to click on the get started button. This button takes the user to another page that where thet are ablle to create/ add a note. Once the note is saved, the title of the saved note is visible ant the user can click on the saved note to see the contents of the note or click on the trash can to delete the note. The user is able to add as many notes ant they would like. 
 
 #### Screenshots
 
@@ -50,11 +61,15 @@ This is a simple note taker using express.js.
 ```
 $ npm i
 ```
-
-
-## Contributing   
-
-
+3. When using Heroku to deploy your app ensure that your `package.json` file is set up correctly. It must have a `start` script and all the project's dependencies defined. E.g.:
+```
+  },
+     "scripts": {
+       "start": "node server.js"
+     }
+   }
+```
+## Contributing
 Please first discuss the change you wish to make via issue or email, before making a change.
 
 Steps to contribute: 
